@@ -5,7 +5,7 @@
  *  Descriptio: this program used printf
  *
  *  Return Always 0 (Succsess)
- */
+*/
 
 int main(void)
 {
