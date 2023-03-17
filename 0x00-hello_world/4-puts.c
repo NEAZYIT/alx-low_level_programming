@@ -3,11 +3,8 @@
 /**
  * main - Entry point 
  *
- * Description: this my first program
- *
  * Return: Always 0 (Success)
  */
-
 int main(void)
 {
 	puts("\"Programming is like building a multilingual puzzle");
