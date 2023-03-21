@@ -1,13 +1,15 @@
 #include "main.h"
-
+#include <stdio.h>
 /**
- * main - Entry point
- * Return:0
+ * main - check the code
+ *
+ * Return: Always 0.
  */
+
 
 int main (void)
 {
-    char str[9] = "_putchar";      	
+    char str[9] = "_putchar";   
 
     int i = 0;
 
