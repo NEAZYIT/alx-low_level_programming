@@ -9,7 +9,7 @@
 
 void print_alphabet(void);
 
-int main (void)
+int main(void)
 {
 char str[27] = "abcdefghijklmnopqrstuvwxyz";
 
