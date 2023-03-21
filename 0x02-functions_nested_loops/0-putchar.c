@@ -8,15 +8,15 @@
 
 int main(void)
 {
-    char str[9] = "_putchar";
-    int i = 0;
+char str[9] = "_putchar";
+int i = 0;
 
-    while ("_putchar"[i] != '\0')
-    {
-        putchar(str[i]);
-        i++;
-    }
+while ("_putchar"[i] != '\0')
+{
+	putchar(str[i]);
+	i++;
+}
 
-    putchar('\n');
-    return (0);
+putchar('\n');
+return (0);
 }
