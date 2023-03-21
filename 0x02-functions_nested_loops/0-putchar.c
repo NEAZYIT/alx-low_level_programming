@@ -1,11 +1,11 @@
 #include "main.h"
-#include <stdio.h>
 
 /**
- * main - check the code
+ * main - Entry point
  *
- * Return: Always 0.
+ * Return: Alway 0 (Sucess)
  */
+
 
 int main (void)
 {
