@@ -1,26 +1,13 @@
 #include "main.h"
 #include <stdio.h>
 
-/**
- * main - check the code
- *
- * Return: Always 0.
- */
-
-void print_alphabet(void);
-
-int main(void)
+void print_alphabet(void)
 {
-char str[27] = "abcdefghijklmnopqrstuvwxyz";
+char c;
 
-int i = 0;
-
-while ("abcdefghijklmnopqrstuvwxyz"[i] != '\0')
+for (c = 'a'; c <= 'z'; c++)
 {
-	putchar(str[i]);
-
-        i++;
+        putchar(c);
 }
 putchar('\n');
-return 0;
 }
