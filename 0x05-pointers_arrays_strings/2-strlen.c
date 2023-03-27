@@ -7,11 +7,14 @@
  * Description: this will return the length of a string
  * Return: 0 is success
  */
-int _strlen(char *s) {
+int _strlen(char *s)
+{
     int len = 0;
-    while (*s != '\0') {
-        len++;
-        s++;
+    while (*s != '\0')
+    {
+               len++;
+               s++;
     }
+
     return len;
 }
