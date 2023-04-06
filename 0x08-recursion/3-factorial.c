@@ -1,24 +1,23 @@
 #include "main.h"
-
 /**
- * factorial - Returns the factorial of a given number
+ * factorial -  return the factorial of a given number
  *
- * @n: The number to find the factorial of
+ * @n: int to check
  *
- * Return: The factorial of n, or -1 if n is negative
+ * Return: the factorial number of n
  */
 int factorial(int n)
 {
-    if (n == 0 || n == 1)
-    {
-        return (1);
-    }
-    else if (n > 1)
-    {
-        return (n * factorial(n - 1));
-    }
-    else
-    {
-        return (-1);
-    }
+	if (n < 0)
+	{
+		return (-1);
+	}
+	if (n == 0)
+	{
+		return (1);
+	}
+	else
+	{
+		return (n * factorial(n - 1));
+	}
 }
