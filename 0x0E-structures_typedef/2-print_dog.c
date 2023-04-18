@@ -11,12 +11,16 @@
 
 void print_dog(struct dog *d)
 {
-	if (d == NULL)
+	if (d)
 	{
-		return;
+		/* I print as the example */
+		/* I use the ? operator */
+		/* return its left-hand operand if is not null */
+		/* otherwise,evaluates the righ operand and return its result*/
+		printf("Name: %s\n", d->name ? d->name : "(nil)");
+		/* compiler doesn't let me add condition for the float type */
+		printf("Age: %f\n", d->age);
+		printf("Owner: %s\n", d->owner ? d->owner : "(nil)");
 	}
 
-	printf("Name: %s\n", (d->name != NULL) ? d->name : "(nil)");
-	printf("Owner: %s\n", (d->owner != NULL) ? d->owner : "(nil)");
-	printf("Age: %f\n", d->age);
 }
