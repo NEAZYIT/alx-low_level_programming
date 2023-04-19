@@ -13,16 +13,13 @@
 
 void array_iterator(int *array, size_t size, void (*action)(int))
 {
-	size_t i;
-
-	/* loop through the array */
-	for (i = 0; i < size; i++)
+	unsigned int elements;
+	/* run through the array to kow which are the elements */
+	/* elements runs while it is less than the size */
+	if (action && array)
 	{
-		/* Check if  the function pointer is not NULL befor calling the function */
-		if (action != NULL)
-		{
-			/* Call the function pointer to by action */
-			action(array[i]);
-		}
+		for (elements = 0; elements < size; elements++)
+			action(array[elements]);
 	}
+	/* so  dereference the pointer to the function */
 }
