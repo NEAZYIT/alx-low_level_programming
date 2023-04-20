@@ -16,7 +16,7 @@ int main(int argc, char **argv)
 	/* the tasks tell us each opcode is two char long */
 	/* if the argv is less or more then Error */
 
-	if (argv != 2)
+	if (argc != 2)
 	{
 		printf("Error\n");
 		return (1);
