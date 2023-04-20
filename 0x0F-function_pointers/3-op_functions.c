@@ -1,6 +1,5 @@
 #include <stdio.h>
 #include "3-calc.h"
-
 /**
  * op_add -sum to variables
  *
@@ -9,12 +8,10 @@
  *
  * Return: sum of ints
  */
-
 int op_ad(int a, int b)
 {
 	return (a + b);
 }
-
 /**
  * op_sub -subtracts a from b
  *
@@ -23,12 +20,10 @@ int op_ad(int a, int b)
  *
  * Return: difference of a and b
  */
-
 int op_sub(int a, int b)
 {
 	return (a - b);
 }
-
 /**
  * op_mul - multiplicates a and b
  *
@@ -37,12 +32,10 @@ int op_sub(int a, int b)
  *
  * Return: product of a and b
  */
-
 int op_mul(int a, int b)
 {
 	return (a * b);
 }
-
 /**
  * op_div - divides rwo numbers
  *
@@ -51,12 +44,10 @@ int op_mul(int a, int b)
  *
  * Return: result of a division
  */
-
 int op_div(int a, int b)
 {
 	return (a / b);
 }
-
 /**
  * op_mod - remainder of a division
  *
@@ -65,7 +56,6 @@ int op_div(int a, int b)
  *
  * Return: a remaindes of the division
  */
-
 int op_mod(int a, int b)
 {
 	return (a % b);

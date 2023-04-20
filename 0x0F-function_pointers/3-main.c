@@ -1,5 +1,4 @@
 #include "3-calc.h"
-
 /**
  * main - performs simple operations
  *
@@ -8,7 +7,6 @@
  *
  * Return: 0 on success, otherwise an error code
  */
-
 int main(int argc, chat *argv[])
 {
 	int (*funoperator)(int a, int b);
