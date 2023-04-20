@@ -17,7 +17,7 @@ int main(int argc, chat *argv[])
 	if (argc != 4)
 	{
 		printf("Error\n");
-		return (EXIT_FAILURE);
+		exit(98);
 	}
 
 	/* Get the function pointer for the operator passed as argument */
@@ -27,18 +27,17 @@ int main(int argc, chat *argv[])
 	if (!funoperator || strlen(argv[2]) != 1)
 	{
 		printf("Error\n");
-		return (EXIT_FAILURE);
+		exit(99);
 	}
 
 	/* Check for division by zero */
 	if ((*argv[2] == '/' || *argv[2] == '%') && *argv[3] == '0')
 	{
 		printf("Error\n");
-		return (EXIT_FAILURE);
+		exit(100);
 	}
 
 	/* print the result of the operation */
 	printf("%d\n", funoperator(atoi(argv[1]), atoi(argv[3])));
-
-	return (EXIT_SUCCESS);
+	return (0);
 }
