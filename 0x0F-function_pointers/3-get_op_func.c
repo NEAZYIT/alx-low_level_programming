@@ -1,8 +1,8 @@
 #include <stdio.h>
 #include "3-calc.h"
 
-/*
- * get_op_func - pointer to  a function asked by the user
+/**
+ * get_op_func - pointer to a function asked by the user
  *
  * @s: the operator passed as argument to the program
  *
