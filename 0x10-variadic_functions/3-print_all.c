@@ -1,109 +1,50 @@
 #include "variadic_functions.h"
+#include <stdio.h>
+#include <stdarg.h>
 /**
- * print_all - prints anything
- *
- * @format: fotmat of characters (ceis)
- *
- * Return: void
+ * print_all - Entry Point
+ * c = char, i = int, f = float, s = char * (if null print (nil))
+ * @format: list of arg types
+ * Return: 0
  */
 void print_all(const char * const format, ...)
 {
-	/* with the type structure define now I can create the structure */
-	characters arraychars[] = {
-		{"c", printchar},
-		{"i", printinteger},
-		{"f", printfloat},
-		{"s", printstring},
-		{NULL, NULL}
-	};
-	/* two functions to run and compare */
-	int runf = 0;
-	int runarr = 0;
-	char *spacecomma = "";
-	va_list charlist;
-	/* initialiaze the iterator va_list with the first argument passed */
-	/* would be the variable tyupe va_list followed by the format */
-	va_start(charlist, format);
-	/* start running format */
+	va_list valist;
+	int n = 0, i = 0;
+	char *sep = ", ";
+	char *str;
 
-	while (format != NULL && format[runf] != '\0')
+	va_start(valist, format);
+
+	while (format && format[i])
+		i++;
+
+	while (format && format[n])
 	{
-		/* I have to decide the limit of the array */
-		/* the array has four elements */
-		runarr = 0;
-		while (runarr < 4)
+		if (n  == (i - 1))
 		{
-			/* start comparition */
-			/* dereferenced to the pointer arguments */
-			if (format[runf] == *arraychars[runarr].arguments)
-			{
-				printf("%s", spacecomma);
-				arraychars[runarr].ptrfunc(charlist);
-				spacecomma = ", ";
-				break;
-			}
-			runarr++;
+			sep = "";
 		}
-		runf++;
+		switch (format[n])
+		{
+		case 'c':
+			printf("%c%s", va_arg(valist, int), sep);
+			break;
+		case 'i':
+			printf("%d%s", va_arg(valist, int), sep);
+			break;
+		case 'f':
+			printf("%f%s", va_arg(valist, double), sep);
+			break;
+		case 's':
+			str = va_arg(valist, char *);
+			if (str == NULL)
+				str = "(nil)";
+			printf("%s%s", str, sep);
+			break;
+		}
+		n++;
 	}
 	printf("\n");
-	va_end(charlist);
-}
-
-/**
- * printchar - prints a char
- *
- * @charlist: type va_list that iterates through the arguments
- *
- * Return: void
- */
-void printchar(va_list charlist)
-{
-	printf("%c", va_arg(charlist, int));
-}
-
-/**
- * printinteger - prints an integer
- *
- * @charlist: type va_list that iterates through the arguments
- *
- * Return:void
- */
-void printinteger(va_list charlist)
-{
-	printf("%d", va_arg(charlist, int));
-}
-
-/**
- * printfloat - prints a double
- *
- * @charlist: type va_list that iterates through the arguments
- *
- * Return: void
- */
-void printfloat(va_list charlist)
-{
-	printf("%f", va_arg(charlist, double));
-}
-
-/**
- * printstring - prints a string
- *
- * @charlist: type va_list
- *
- * Return: void
- */
-void printstring(va_list charlist)
-{
-	/* as the task show us, s : char * */
-	char *str;
-	/* de-reference str to the arg passed to the function */
-	/* through va_list, thats why va_arg */
-	str = va_arg(charlist, char *);
-	/* task condition */
-	if (str == NULL)
-		str = "(nil)";
-	/* if its NULL will print nil, else will print str */
-	/* as the argument passed through va_list */
-	printf("%s", str);
+	va_end(valist);
 }
