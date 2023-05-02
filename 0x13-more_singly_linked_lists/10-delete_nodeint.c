@@ -1,4 +1,5 @@
 #include "lists.h"
+#include <stdlib.h>
 
 /**
  * delete_nodeint_at_index - Deletes the node at index index if a listint_t
@@ -11,32 +12,28 @@
 
 int delete_nodeint_at_index(listint_t **head, unsigned int index)
 {
-	listint_t *current, *prev;
-	unsigned int i;
+	listint_t *ptr, *prev = NULL;
 
-	if (*head == NULL)
+	if (!head || !*head)
 		return (-1);
 
 	if (index == 0)
 	{
-		*head = (*head)->next;
+		ptr = (*head)->next;
+		free(*head);
+		*head = ptr;
 		return (1);
 	}
 
-	prev = *head;
-	current = (*head)->next;
-	for (i = 1; current != NULL && i < index; i++)
-	{
-		prev = current;
-		current = current->next;
-	}
+	for (ptr = *head; index && ptr->next; index--, ptr = ptr->next)
+		prev = ptr;
 
-	if (current == NULL)
+	if (index)
 		return (-1);
 
-	prev->next = current->next;
-	free(current);
-
+	if (prev)
+		prev->next = ptr->next;
+	free(ptr);
 
 	return (1);
 }
