@@ -9,7 +9,7 @@
  *
  * Return: Always 0.
  */
-int main(int argc, char *argv[])
+int main(int __attribute__((__unused__)) argc, char *argv[])
 {
 	char password[7], *codex;
 	int len = strlen(argv[1]), i, tmp;
@@ -49,6 +49,5 @@ int main(int argc, char *argv[])
 
 	password[6] = '\0';
 	printf("%s", password);
-
 	return (0);
 }
