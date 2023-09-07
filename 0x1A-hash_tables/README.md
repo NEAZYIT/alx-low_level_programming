@@ -50,7 +50,8 @@ typedef struct hash_table_s
     hash_node_t **array;
 } hash_table_t;
 
-### File: 0-hash_table_create.c
+
+## File: 0-hash_table_create.c
 
 - Description: This C function creates a `hash_table_t` hash table.
 - Returns: If the function fails, it returns NULL. Otherwise, it returns a pointer to the new hash table.
