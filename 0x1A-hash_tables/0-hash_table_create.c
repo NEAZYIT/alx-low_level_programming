@@ -10,25 +10,19 @@
 
 hash_table_t *hash_table_create(unsigned long int size)
 {
-	hash_table_t *hash_table;
-	unsigned long int index; /* Used for iterating through the array */
+	hash_table_t *ht;
+	unsigned long int i;
 
-	/* Allocate memory for the hash table structure */
-	hash_table = malloc(sizeof(hash_table_t));
-	if (hash_table == NULL)
+	ht = malloc(sizeof(hash_table_t));
+	if (ht == NULL)
 		return (NULL);
 
-	/* Initialize the size of the hash table */
-	hash_table->size = size;
-
-	/* Allocate memory for the array of hash nodes */
-	hash_table->array = malloc(sizeof(hash_node_t *) * size);
-	if (hash_table->array == NULL)
+	ht->size = size;
+	ht->array = malloc(sizeof(hash_node_t *) * size);
+	if (ht->array == NULL)
 		return (NULL);
+	for (i = 0; i < size; i++)
+		ht->array[i] = NULL;
 
-	/* Initialize each slot in the array to NULL */
-	for (index = 0; index < size; index++)
-		hash_table->array[index] = NULL;
-
-	return (hash_table);
+	return (ht);
 }
