@@ -1,5 +1,7 @@
 # Search Algorithms in C
 
+![C - Search Algorithms](https://github.com/NEAZYIT/alx-low_level_programming/assets/121446147/ee81a128-dc9a-421c-a310-8b2bea759515)
+
 ## Description
 This project implements various search algorithms in C, offering a comprehensive understanding and implementation of each algorithm's logic. Included algorithms:
 
@@ -96,3 +98,6 @@ Description of the task and function `jump_list`.
 ### 13. Linear search in a skip list
 #### Description
 Description of the task and function `linear_skip`.
+
+## Author
+[NEAZYIT](https://github.com/NEAZYIT)
