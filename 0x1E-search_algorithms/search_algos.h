@@ -63,4 +63,7 @@ typedef struct skiplist_s
 
 skiplist_t *linear_skip(skiplist_t *list, int value);
 
+/* Function prototype */
+int recurse_helper(int *arr, size_t size, int val, size_t idx);
+
 #endif /* SEARCH_ALGOS_H */
