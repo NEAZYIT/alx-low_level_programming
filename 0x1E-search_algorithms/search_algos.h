@@ -1,29 +1,12 @@
 #ifndef SEARCH_ALGOS_H
 #define SEARCH_ALGOS_H
 
+/* LIBRARIES */
 #include <stdio.h>
 #include <stdlib.h>
 #include <math.h>
 
-/* Task 0: Linear search */
-int linear_search(int *array, size_t size, int value);
-
-/* Task 1: Binary search */
-int binary_search(int *array, size_t size, int value);
-
-/* Task 7: Jump search */
-int jump_search(int *array, size_t size, int value);
-
-/* Task 9: Interpolation search */
-int interpolation_search(int *array, size_t size, int value);
-
-/* Task 10: Exponential search */
-int exponential_search(int *array, size_t size, int value);
-
-/* Task 11: Advanced binary search */
-int advanced_binary(int *array, size_t size, int value);
-
-/* Task 12: Jump search in a singly linked list */
+/* STRUCTS */
 /**
  * struct listint_s - singly linked list
  *
@@ -32,17 +15,15 @@ int advanced_binary(int *array, size_t size, int value);
  * @next: Pointer to the next node
  *
  * Description: singly linked list node structure
+ * for Holberton project
  */
 typedef struct listint_s
 {
-    int n;
-    size_t index;
-    struct listint_s *next;
+	int n;
+	size_t index;
+	struct listint_s *next;
 } listint_t;
 
-listint_t *jump_list(listint_t *list, size_t size, int value);
-
-/* Task 13: Linear search in a skip list */
 /**
  * struct skiplist_s - Singly linked list with an express lane
  *
@@ -52,18 +33,29 @@ listint_t *jump_list(listint_t *list, size_t size, int value);
  * @express: Pointer to the next node in the express lane
  *
  * Description: singly linked list node structure with an express lane
+ * for Holberton project
  */
 typedef struct skiplist_s
 {
-    int n;
-    size_t index;
-    struct skiplist_s *next;
-    struct skiplist_s *express;
+	int n;
+	size_t index;
+	struct skiplist_s *next;
+	struct skiplist_s *express;
 } skiplist_t;
 
+/* PROTOTYPES */
+int linear_search(int *array, size_t size, int value);
+int binary_search(int *array, size_t size, int value);
+int jump_search(int *array, size_t size, int value);
+int interpolation_search(int *array, size_t size, int value);
+int exponential_search(int *array, size_t size, int value);
+int advanced_binary(int *array, size_t size, int value);
+listint_t *jump_list(listint_t *list, size_t size, int value);
 skiplist_t *linear_skip(skiplist_t *list, int value);
 
-/* Function prototype */
-int recurse_helper(int *arr, size_t size, int val, size_t idx);
+/* UTILITIES */
+listint_t *create_list(int *array, size_t size);
+void free_list(listint_t *list);
+void print_list(const listint_t *list);
 
 #endif /* SEARCH_ALGOS_H */
