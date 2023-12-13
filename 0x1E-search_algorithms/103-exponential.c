@@ -13,8 +13,7 @@ int recurse_helper(int *array, size_t left, size_t right, int value);
  */
 int exponential_search(int *array, size_t size, int value)
 {
-	size_t right = 1;
-	size_t left;
+	size_t right = 1, left;
 
 	if (array == NULL)
 		return (-1);
@@ -28,9 +27,9 @@ int exponential_search(int *array, size_t size, int value)
 	if (array[right] == value)
 		return (right);
 
-	left = right / 2;
+	left = right / 2; /* establish left bound */
 
-	if (right >= size)
+	if (right >= size) /* if right is out of bounds */
 		right = size - 1;
 
 	printf("Value found between indexes [%lu] and [%lu]\n", left, right);
@@ -65,19 +64,21 @@ int binary_search(int *array, size_t size, int value)
  */
 int recurse_helper(int *array, size_t left, size_t right, int value)
 {
-	size_t i = left;
-	size_t mid;
+	size_t i = left, mid;
 
 	if (left > right)
 		return (-1);
 
+	/* print search progress */
 	printf("Searching in array: %d", array[i++]);
 	while (i <= right)
 		printf(", %d", array[i++]);
 	printf("\n");
 
+	/* calculate mid */
 	mid = left + ((right - left) / 2);
 
+	/* check if mid is value */
 	if (array[mid] == value)
 		return (mid);
 	else if (array[mid] > value)
